@@ -1,0 +1,74 @@
+﻿@model MVC_WebAPI_Kutuphane.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2>Profil</h2>
+<hr />
+<div class="container">
+    <div>
+        Ad Soyad
+        <button class="pull-right" type="button" onclick="location.href='@Url.Action("AdSoyadDuzenle","Home")'">Düzenle</button>
+    </div>
+    <div style="color:lightslategray">@Model.Ad @Model.Soyad</div>
+    @if (@TempData["AdSoyadDuzenle"] != "Hata!")
+    {
+        <div class="alert-success">
+            @TempData["AdSoyadDuzenle"]
+        </div>
+    }
+    else
+    {
+        <div class="alert-danger">
+            @TempData["AdSoyadDuzenle"]
+        </div>
+    }
+</div>
+<hr />
+<div class="container">
+    <div>
+        E-posta
+        <button class="pull-right" type="button" onclick="location.href='@Url.Action("EpostaDuzenle","Home")'">Düzenle</button>
+    </div>
+    <div style="color:lightslategray">@Model.Eposta</div>
+    @if (@TempData["EpostaDuzenle"] != "Hata!")
+    {
+        <div class="alert-success">
+            @TempData["EpostaDuzenle"]
+        </div>
+    }
+    else
+    {
+        <div class="alert-danger">
+            @TempData["EpostaDuzenle"]
+        </div>
+    }
+</div>
+<hr />
+<div class="container">
+    <div>
+        Şifre
+        <button class="pull-right" type="button" onclick="location.href='@Url.Action("ParolaDuzenle","Home")'">Düzenle</button>
+    </div>
+    <div style="color:lightslategray">******</div>
+    @if (@TempData["ParolaDuzenle"] != "Hata!")
+    {
+        <div class="alert-success">
+            @TempData["ParolaDuzenle"]
+        </div>
+    }
+    else
+    {
+        <div class="alert-danger">
+            @TempData["ParolaDuzenle"]
+        </div>
+    }
+</div>
+<hr />
+<div class="container">
+    <div>
+        Kullanıcı Çıkışı
+        <button class="pull-right" type="button" onclick="location.href='@Url.Action("CikisYap","Home")'">Çıkış Yap</button>
+    </div>
+</div>

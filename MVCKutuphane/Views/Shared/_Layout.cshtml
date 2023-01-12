@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Style/sidabar.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .dropdown-menu {
+            display: none
+        }
+
+        .dropdown:hover > .dropdown-menu {
+            display: block;
+            color: white;
+            /*background-color: #222;*/
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="@Url.Content("~/Media/logolow tp.png")" alt="Logo" style="width: 90px; height: 56px; margin-right: 25px;" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        @*@Html.ActionLink("Ana Sayfa", "Index", "Home")*@
+                        <a href="@Url.Action("Index", "Home")" class="dropdown-toggle" @*data-toggle="dropdown"*@>Ana Sayfa<b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Gecikmiş Kitaplar", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Teslimi Yakın Kitaplar", "TeslimiYakin", "Home")</li>
+                        </ul>
+                    </li>
+
+                    <li>@Html.ActionLink("Kitap Sorgula", "KitapSorgula", "Home")</li>
+
+                    <li class="dropdown">
+                        @*@Html.ActionLink("Üye İşlemleri", "UyeIslem", "Home")*@
+                        <a href="@Url.Action("UyeIslem", "Home")" class="dropdown-toggle" @*data-toggle="dropdown"*@>Üye İşlemleri<b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Yeni Üye Kaydet", "UyeIslem", "Home")</li>
+                            <li>@Html.ActionLink("Üye Sorgula", "UyeSorgula", "Home")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        @*@Html.ActionLink("Üye İşlemleri", "UyeIslem", "Home")*@
+                        <a href="@Url.Action("KitapKayit", "Home")" class="dropdown-toggle" @*data-toggle="dropdown"*@>Kitap İşlemleri<b class="caret"></b> </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Yeni Kitap Ekle", "KitapKayit", "Home")</li>
+                            <li>@Html.ActionLink("Kitap Türlerini Düzenle", "KitapTuruDuzenle", "Home")</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Profil", "Profil", new { tc = HttpContext.Current.User.Identity.Name })</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

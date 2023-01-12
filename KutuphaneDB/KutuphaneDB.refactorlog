@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="11a487fe-a7df-4927-a9cf-5bb1872cf1b7" ChangeDateTime="11/28/2022 11:25:10">
+    <Property Name="ElementName" Value="[dbo].[Member].[Ad]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Member]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Ad Soyad" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9d39255b-9705-460e-ae7d-e078284d5f51" ChangeDateTime="11/28/2022 11:25:37">
+    <Property Name="ElementName" Value="[dbo].[Member].[Soyad]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Member]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Telefon" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="edbac4b3-5092-4548-b507-b9adcdbdb71e" ChangeDateTime="11/28/2022 11:25:42">
+    <Property Name="ElementName" Value="[dbo].[Member].[Ad Soyad]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Member]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AdSoyad" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="81531f4c-48da-4d36-9f61-e086e08f695d" ChangeDateTime="11/28/2022 11:32:13">
+    <Property Name="ElementName" Value="[dbo].[BookMember].[kitapID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BookMember]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="bookID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="234b0eaf-5dd5-4990-9200-6cce991724e6" ChangeDateTime="11/28/2022 11:39:12">
+    <Property Name="ElementName" Value="[dbo].[BookMember].[tarih]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BookMember]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="teslimtarihi" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0239ccbb-93ef-424b-9f32-6cbb9b747f81" ChangeDateTime="11/28/2022 13:13:04">
+    <Property Name="ElementName" Value="[dbo].[BookMember].[durum]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BookMember]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="teslimdurumu" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cf39a43d-d87e-4ae2-9d53-d148bc84985a" ChangeDateTime="12/12/2022 20:14:51">
+    <Property Name="ElementName" Value="[dbo].[BookType].[type]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BookType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="tur" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="67344a91-2dea-48bd-a2a4-127272ec0f05" ChangeDateTime="12/22/2022 09:15:28">
+    <Property Name="ElementName" Value="[dbo].[Notification].[Notification]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Notification]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Bildirim" />
+  </Operation>
+</Operations>

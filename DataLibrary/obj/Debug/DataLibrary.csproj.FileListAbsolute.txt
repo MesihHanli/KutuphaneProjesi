@@ -1,0 +1,13 @@
+D:\Projects\DataLibrary\bin\Debug\DataLibrary.dll
+D:\Projects\DataLibrary\bin\Debug\DataLibrary.pdb
+D:\Projects\DataLibrary\bin\Debug\Dapper.Contrib.dll
+D:\Projects\DataLibrary\bin\Debug\Dapper.dll
+D:\Projects\DataLibrary\bin\Debug\Dapper.xml
+D:\Projects\DataLibrary\bin\Debug\Dapper.Contrib.xml
+D:\Projects\DataLibrary\obj\Debug\DataLibrary.csproj.AssemblyReference.cache
+D:\Projects\DataLibrary\obj\Debug\DataLibrary.csproj.CoreCompileInputs.cache
+D:\Projects\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
+D:\Projects\DataLibrary\obj\Debug\DataLibrary.dll
+D:\Projects\DataLibrary\obj\Debug\DataLibrary.pdb
+D:\Projects\DataLibrary\bin\Debug\BouncyCastle.Crypto.dll
+D:\Projects\DataLibrary\bin\Debug\BouncyCastle.Crypto.xml

@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[BookMember]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [bookID] INT NOT NULL, 
+    [memberID] INT NOT NULL, 
+    [teslimdurumu] BIT NOT NULL DEFAULT 0, 
+    [teslimtarihi] DATE NOT NULL DEFAULT CONVERT(DATE,DATEADD(DAY, 14, GETDATE())), 
+    [puan] INT NOT NULL DEFAULT 0, 
+    CONSTRAINT [FKbookId] FOREIGN KEY (BookID) REFERENCES dbo.Book(ID), 
+    CONSTRAINT [FKmemberID] FOREIGN KEY (MemberID) REFERENCES dbo.member(ID)
+)

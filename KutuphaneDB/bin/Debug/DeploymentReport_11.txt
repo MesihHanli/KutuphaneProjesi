@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column tur in table [dbo].[Book] is currently  NVARCHAR (50) NOT NULL but is being changed to  NVARCHAR
+         (30) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type 
+         NVARCHAR (30) NOT NULL.
+
+** User actions
+     Alter
+       [dbo].[Book] (Table)
+     Create
+       [dbo].[BookType] (Table)
+
+** Supporting actions
+
+The type for column tur in table [dbo].[Book] is currently  NVARCHAR (50) NOT NULL but is being changed to  NVARCHAR (30) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  NVARCHAR (30) NOT NULL.
+

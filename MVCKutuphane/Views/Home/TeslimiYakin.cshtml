@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MVCKutuphane.Models.BookMemberModel>
+
+@{
+    ViewBag.Title = "TeslimiYakin";
+}
+
+<!--<div class="sidenav" style="background: #eee; margin: 0; position: absolute; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+    @Html.ActionLink("Gecikmiş Kitaplar", "Index", new { })-->
+    @*<input type="button" value="Gecikmiş Kitaplar" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />*@
+    <!--@Html.ActionLink("Teslimi Yakın Kitaplar", "TeslimiYakin", new { })
+</div>-->
+
+<h2>TeslimiYakin</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeslimTarihi)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeslimTarihi)
+                </td>
+
+                <td>
+                    @*checkbox*@
+                    @Html.ActionLink("Teslim Al", "TeslimAl", new { TeslimId = item.BookId, ActionName = "TeslimiYakin" }) |
+                    @*@Html.ActionLink("Süresini Uzat", "UyariGonder", new { MemberId = item.MemberId, BookName = item.BookName, ActionName = "TeslimiYakin" })*@
+
+                </td>
+            </tr>
+        }
+    }
+
+</table>

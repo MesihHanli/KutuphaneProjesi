@@ -1,0 +1,112 @@
+﻿@model IEnumerable<MVCKutuphane.Models.BookModel>
+
+@{
+    ViewBag.Title = "KitapSorgula";
+}
+
+<h2>Kitap Sorgula</h2>
+
+
+@using (Html.BeginForm("SearchForName"))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        <div class="form-group">
+            <div class="col-md-10">
+                <label for="searchPhrase"></label>
+                <input type="text" name="searchPhrase" id="searchPhrase" class="form-control" placeholder="Kitap adı, yazar ya da id giriniz"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit"  value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<span style="margin-left:7px;" class="alert-danger">@TempData["Silindi"]</span>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Isim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yazar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sayfa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            if (item.Durum.Contains("kutuphane"))
+            {
+                <tr style="background-color:antiquewhite">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Isim)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Yazar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tur)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sayfa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Ödünç Ver", "Borrow", new { bookid = item.Id }) |
+                        @Html.ActionLink("Geçmişi", "Details", new {  bookId=item.Id  }) |
+                        @Html.ActionLink("Çıkar", "DeleteBook", new { bookId = item.Id })
+                    </td>
+                </tr>
+            }
+            else if(item.Durum.Contains("uye"))
+            {
+                <tr style="background-color:lightgray">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Isim)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Yazar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tur)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sayfa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Teslim Al", "TeslimAl", new { TeslimId = item.Id, ActionName = "KitapSorgula" }) |
+                        @Html.ActionLink("Geçmişi", "Details", new { bookId = item.Id }) |
+                        @Html.ActionLink("Çıkar", "DeleteBook", new { bookId = item.Id })
+                    </td>
+                </tr>
+            }
+        }
+    }
+
+
+</table>

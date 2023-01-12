@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MVCKutuphane.Models.BookTypeModel>
+
+@{
+    ViewBag.Title = "KitapTuruDuzenle";
+}
+
+<h2>Kitap Türü Düzenle</h2>
+
+<p>
+    @Html.ActionLink("Yeni Kitap Türü Ekle", "KitapTuruEkle", "Home")
+</p>
+
+<span style="margin-left:7px;" class="alert-danger">@TempData["KitapTuruSilme"]</span>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tur)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tur)
+            </td>
+            <td>
+                @Html.ActionLink("Sil", "KitapTuruSil", new {  bookTypeId = item.Id  })
+            </td>
+        </tr>
+    }
+
+</table>
